@@ -55,7 +55,7 @@ final class InventoryPanel {
             toggle = Button.builder(Component.literal(open ? "Hide" : "Checklist"), b -> {
                 open = !open;
                 b.setMessage(Component.literal(open ? "Hide" : "Checklist"));
-                unpin.setVisible(open);
+                unpin.visible = open;
             }).bounds(x, y - 16, W, 14).build();
             access.addRenderableWidget(toggle);
 
@@ -63,7 +63,7 @@ final class InventoryPanel {
                 FarmListClient.pin(null);
                 FarmListClient.message("[SYSTEM] Unpinned.");
             }).bounds(x + 8, y + H - 22, W - 16, 16).build();
-            unpin.setVisible(open);
+            unpin.visible = open;
             access.addRenderableWidget(unpin);
         });
 
